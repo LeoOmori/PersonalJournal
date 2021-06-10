@@ -1,0 +1,23 @@
+
+
+today Jobs:
+
+[] make the design
+////////
+[] front page
+[] login Screen
+[] register screen
+
+
+backend
+#######
+[] set user Login back end with jwt
+
+frontend
+#######
+[] set react login with store jwt
+
+
+if i have time:
+
+[] make the desing to the create journal entry 
