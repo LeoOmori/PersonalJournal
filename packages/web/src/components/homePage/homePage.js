@@ -1,5 +1,7 @@
 import diaryIcon from '../../assets/diaryIcon.png'
-
+import {
+    Link,
+  } from "react-router-dom";
 
 
 function HomePage(){
@@ -21,9 +23,9 @@ function HomePage(){
                             Personal Journal is an online diary where you can write about your day with a great text editor and good archive of your texts
                         </p>
                         <div className="flex mt-8">
-                            <a href="#" className="uppercase py-2 px-4 rounded-lg bg-indigo-900 border-2 border-transparent text-white text-md mr-4 hover:bg-indigo-400">
+                            <Link to="/register" className="uppercase py-2 px-4 rounded-lg bg-indigo-900 border-2 border-transparent text-white text-md mr-4 hover:bg-indigo-400">
                                 Get started
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">

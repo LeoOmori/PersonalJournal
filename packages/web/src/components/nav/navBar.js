@@ -1,4 +1,6 @@
-
+import {
+    Link,
+  } from "react-router-dom";
 
 function NavBar(){
 
@@ -8,17 +10,17 @@ function NavBar(){
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="w-full justify-between flex items-center">
-                            <a className="flex-shrink-0" href="/">
+                            <Link to='/' className="flex-shrink-0">
                                 <p className='font-bebas-neue uppercase  font-black flex flex-col leading-none color-indigo dark:text-white text-gray-800'>Personal Journal</p>
-                            </a>
+                            </Link>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
-                                    <a className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+                                    <Link to="/login" className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" >
                                         Login
-                                    </a>
-                                    <a className="text-gray-300 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+                                    </Link>
+                                    <Link to="/register"  className="text-gray-300 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" >
                                         Register
-                                    </a>
+                                    </Link >
 
                                 </div>
                             </div>
