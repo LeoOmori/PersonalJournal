@@ -2,11 +2,11 @@
 
 today Jobs:
 
-[] make the design
+[x] make the design
 ////////
-[] front page
-[] login Screen
-[] register screen
+[x] front page
+[x] login Screen
+[x] register screen
 
 
 backend
