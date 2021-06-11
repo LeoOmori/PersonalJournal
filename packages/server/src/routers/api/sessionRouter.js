@@ -3,6 +3,7 @@ const sessionController = require("../../controllers/sessionController");
 
 
 router.post('/login',sessionController.login);
+router.post('/refreshToken',sessionController.refresh)
 
 
 
