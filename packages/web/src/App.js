@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState} from 'react';
 import HomeRouter from './routers/homeRouter';
 //context import
 import LoginContext from './context/loginContext';
@@ -17,7 +17,7 @@ function App() {
     </LoginContext.Provider>
 
 
-  );
+  )
 }
 
 export default App;

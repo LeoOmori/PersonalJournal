@@ -6,33 +6,40 @@ function validateEmail(email) {
 
 export default function validate(values){
 
-    let errors = {};
+    let errorsList = {};
+    let isValid = true;
 
     validateEmail(values.email)
 
     if(!values.name || !values.surName){
-        errors.name = "First name and last name required"
+        errorsList.name = "First name and last name required"
+        isValid = false;
     }
 
     if(!values.email){
-        errors.email = "E-mail required";
+        errorsList.email = "E-mail required";
+        isValid = false;
     }else if(!validateEmail(values.email)){
-        errors.email = "E-mail not valid"
+        errorsList.email = "E-mail not valid";
+        isValid = false;
     }
 
     if(!values.password){
-        errors.password = "password required"
+        errorsList.password = "password required";
+        isValid = false;
     }else if(values.password.length < 8){
-        errors.password = "password needs to be 8 characters or more"
+        errorsList.password = "password needs to be 8 characters or more";
+        isValid = false;
     }
 
     if(!values.checkPassword){
-        errors.checkPassword = "password check required"
+        errorsList.checkPassword = "password check required";
+        isValid = false;
     }else if(values.checkPassword !== values.password){
-        errors.passwordCheck = "password and password check needs to be the same"
+        errorsList.passwordCheck = "password and password check needs to be the same"
+        isValid = false;
     }
 
-
-    return errors;
+    return { errorsList , isValid };
 
 }
