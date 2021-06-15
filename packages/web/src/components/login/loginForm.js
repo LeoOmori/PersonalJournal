@@ -1,6 +1,16 @@
-
+import {useContext, useState} from 'react';
+import loginContext from '../../context/loginContext';
 
 function LoginForm() {
+
+    const {isLogged,setIslogged} = useContext(loginContext);
+
+    const handleSubmit = () => {
+
+        
+
+    }
+
 
     return(
 
