@@ -28,7 +28,7 @@ module.exports = {
         await Token.create({userId:user._id,refreshToken});
 
  
-        return res.json({toke:jwtToken, refreshToken , auth:true});
+        return res.json({token:jwtToken, refreshToken , auth:true});
 
     },
 

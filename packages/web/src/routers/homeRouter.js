@@ -11,7 +11,6 @@ import Register from '../components/register/register';
 import NavBar from '../components/nav/navBar';
 
 
-
 function HomeRouter() {
     return (
 

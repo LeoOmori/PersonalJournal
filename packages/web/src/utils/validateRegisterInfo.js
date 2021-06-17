@@ -4,12 +4,10 @@ function validateEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
-export default function validate(values){
+function registerValidate(values){
 
     let errorsList = {};
     let isValid = true;
-
-    validateEmail(values.email)
 
     if(!values.name || !values.surName){
         errorsList.name = "First name and last name required"
@@ -43,3 +41,23 @@ export default function validate(values){
     return { errorsList , isValid };
 
 }
+
+function loginValidate(values){
+
+    let errorsList = {};
+    let isValid = true;
+
+    if(!values.email && !values.password){
+        errorsList.emptyInput = "All the input must be filled";
+        isValid= false;
+    }else if(!validateEmail(values.email)){
+        errorsList.email = "E-mail not valid";
+        isValid = false;
+    }
+
+    return { errorsList , isValid };
+
+}
+
+
+export {registerValidate, loginValidate}

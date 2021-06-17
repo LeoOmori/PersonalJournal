@@ -15,8 +15,7 @@ function App() {
     <LoginContext.Provider value={ isLogged,setIsLogged }>
       <HomeRouter/>
     </LoginContext.Provider>
-
-
+    
   )
 }
 

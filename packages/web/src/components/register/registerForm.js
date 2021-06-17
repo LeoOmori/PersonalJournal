@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import validate from '../../utils/validateRegisterInfo';
+import {registerValidate} from '../../utils/validateRegisterInfo';
 import axios from '../../config/axios';
 import {
     useHistory,
@@ -20,7 +20,7 @@ function RegisterForm(){
     const handleSubmit = async (e) => {
         
         e.preventDefault();
-        const {errorsList, isValid} = validate({name,surName,email,password,checkPassword});
+        const {errorsList, isValid} = registerValidate({name,surName,email,password,checkPassword});
         setErrors( errorsList );
         if(!isValid) return
 
