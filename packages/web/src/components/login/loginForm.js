@@ -1,12 +1,15 @@
 import {useContext, useState} from 'react';
-import loginContext from '../../context/loginContext';
+import LoginContext  from '../../context/loginContext';
 import {loginValidate} from '../../utils/validateRegisterInfo';
+import {useHistory} from "react-router-dom";
 import axios from '../../config/axios';
 
 
 function LoginForm() {
 
-    const {isLogged,setIslogged} = useContext(loginContext);
+    const history = useHistory();
+
+    const {isLogged,setIsLogged} = useContext(LoginContext);
 
     const [ email,setEmail ] = useState('');
     const [ password ,setPassword ] = useState(''); 
@@ -21,29 +24,21 @@ function LoginForm() {
         setErrors(errorsList);
         if(!isValid) return
 
-
         try{
-
             const response = await axios.post('/login', {
-
                 email,
                 password
-
             });
 
             localStorage.setItem('token', response.data.token); 
-            localStorage.setItem('token', response.data.refreshToken);       
-            setIslogged(true);  
-            console.log(response);
-            //setIslogged(true);
-
-
-
+            localStorage.setItem('RefreshToken', response.data.refreshToken);       
+            console.log(isLogged);
+            history.push('/entries');
+            setIsLogged(true);  
 
         }catch(e){
-
+            //console.log(e);
             if(e.response.status === 403){
-
                 setErrors({
                     authError:e.response.data.message
                 })

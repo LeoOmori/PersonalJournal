@@ -1,9 +1,7 @@
 import {useState} from 'react';
 import {registerValidate} from '../../utils/validateRegisterInfo';
 import axios from '../../config/axios';
-import {
-    useHistory,
-  } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 function RegisterForm(){
 
