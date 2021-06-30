@@ -7,7 +7,6 @@ import {
 import Login from '../components/login/login';
 import HomePage from '../components/homePage/homePage';
 import Register from '../components/register/register';
-
 import NavBar from '../components/nav/navBar';
 
 

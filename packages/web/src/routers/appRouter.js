@@ -5,6 +5,8 @@ import {
 } from "react-router-dom";
 
 import ShowEntries from '../components/showEntries/showEntries';
+import test from '../components/login/loginForm';
+
 import NavBar from '../components/nav/navBar'
 
 
@@ -14,11 +16,13 @@ function AppRouter() {
 
         <Router>
             <NavBar/>
-            <Switch>
-                <Route exact  path="/entries"  component={ShowEntries}>
-                    <ShowEntries/>
-                </Route>
-            </Switch>
+            <ShowEntries>
+                <Switch>
+                    <Route exact  path="/test"  component={test}>
+                        <h1>helhelo</h1>
+                    </Route>
+                </Switch>
+            </ShowEntries>
         </Router>
 
     );
