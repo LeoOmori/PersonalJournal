@@ -20,6 +20,8 @@ axiosInstance.interceptors.response.use((response) => {
             return axiosInstance(originalRequest);
             
         }catch(e){
+            localStorage.removeItem('token');
+            localStorage.removeItem('refreshToken');
             return Promise.reject(error);
         }
     }

@@ -9,10 +9,10 @@ function LoginForm() {
 
     const history = useHistory();
 
-    const {isLogged,setIsLogged} = useContext(LoginContext);
+    const {setIsLogged} = useContext(LoginContext);
 
     const [ email,setEmail ] = useState('');
-    const [ password ,setPassword ] = useState(''); 
+    const [ password,setPassword ] = useState(''); 
     const [ errors,setErrors ] = useState({});
 
 
@@ -32,12 +32,11 @@ function LoginForm() {
 
             localStorage.setItem('token', response.data.token); 
             localStorage.setItem('RefreshToken', response.data.refreshToken);       
-            console.log(isLogged);
+            //console.log(isLogged);
             history.push('/entries');
             setIsLogged(true);  
 
         }catch(e){
-            //console.log(e);
             if(e.response.status === 403){
                 setErrors({
                     authError:e.response.data.message

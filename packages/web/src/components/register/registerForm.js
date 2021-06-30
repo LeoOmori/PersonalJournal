@@ -21,9 +21,7 @@ function RegisterForm(){
         const {errorsList, isValid} = registerValidate({name,surName,email,password,checkPassword});
         setErrors( errorsList );
         if(!isValid) return
-
         try{
-
             await axios.post('/user',{
                 name,
                 surname:surName,
@@ -39,7 +37,7 @@ function RegisterForm(){
 
                 setErrors({
                     ...errors,
-                    authError:'email already have an account'
+                    authError:'Login error'
                 })
             }
         }
